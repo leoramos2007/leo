@@ -24,13 +24,13 @@ if($massa < 20) {
 
 $mensagem = "Você está magro.";
 
-}elseif(($massa > 20) and ($massa < 25)) {
+}elseif(($massa > 20) && ($massa < 25)){
 
-$mesagem = "Você está no peso ideal.";
+$mensagem = "Você está no peso ideal.";
 
 }else{
 
-$mesagem = "Você está acima do peso.";
+$mensagem = "Você está acima do peso.";
 
 }
 
