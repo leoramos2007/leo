@@ -16,7 +16,10 @@ $altura = $_POST['altura'];
 
 $altura = bcpow($altura, 2, 2);
 
-$massa = $peso / $altura;
+$conta1 = $altura*$altura;
+$conta2 = $peso/$conta1;
+
+$massa= number_format($conta2);
 
 $massa = round($massa);
 
