@@ -1,51 +1,41 @@
+<form method="post"action="calcular.php">
 
-<!doctype html>
-<html>
+Peso: <input type="text" size="20" name="peso">
 
-<head>
-<meta charset="utf-8">
-<title>Calculadora IMC</title>
-<link href="enc/estilo.css" rel="stylesheet" type="text/css">
-</head>
+Altura: <input type="text" size="20" name="altura">
 
-<body>
-<!--Content-->
-<div id="content">
-    <!--Logo-->
-    <div id="logo">
-    </div>
-    <!--Fim Logo-->
-    
-    <!--Calculadora-->
-    <div id="calculadora">
-    	<!--Formulario-->
-        <form name="calc" method="get" enctype="multipart/form-data" action="resultado.php" class="form">
-        	
-            <fieldset class="f">
-            	
-                <label>
-                <span class="span">Seu Peso</span>
-                <br/>
-                <input type="text" name="peso" class="in" />
-                </label>
-                
-                <br />
-                <label>
-                <span class="span">Sua Altura (Use Pontuação: 1.99 Em METROS)</span>
-                <br/>
-                <input type="text" name="altura" class="in"/>
-                </label>
-                
-                <input type="submit" name="envia" value="IMC!" class="btn">
-            
-            </fieldset>
-        
-        </form>
-        <!--Fim Formulario-->
-    </div>
-    <!--Fim Calculadora-->
-</div>
-<!--Fim Content-->   
-    
-</body>
-</html>
+<input type="submit" value="Calcular">
+
+</form>
+
+<?php
+
+$peso = $_POST['peso'];
+
+$altura = $_POST['altura'];
+
+$altura = bcpow($altura, 2, 2);
+
+$massa = $peso / $altura;
+
+$massa = round($massa);
+
+if($massa < 20) {
+
+$mensagem = "Você está magro.";
+
+}elseif(($massa > 20) and ($massa < 25)) {
+
+$mesagem = "Você está no peso ideal.";
+
+}else{
+
+$mesagem = "Você está acima do peso.";
+
+}
+
+echo "Sua massa corporal é: <b>$massa</b> <br>";
+
+echo "Estado atual: <b>$mensagem</b>"
+
+?>
