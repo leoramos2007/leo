@@ -2,17 +2,17 @@
 <BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080">
 
 
-      <p align="center"><b><font face="Arial" color="#000080" size="4">C·lculo
-      do Ìndice de massa corpÛrea (IMC)</font></b></p>
+      <p align="center"><b><font face="Arial" color="#000080" size="4">C√°lculo
+      do √≠ndice de massa corp√≥rea (IMC)</font></b></p>
 
 
 <?php
 
-// Script que calcula o Ìndice de massa corpÛrea (IMC) de acordo com o peso e a altura
+// Script que calcula o √≠ndice de massa corp√≥rea (IMC) de acordo com o peso e a altura
 // Autor: Juliano Niederauer
 // http://www.niederauer.com.br
 
-// … proibÌda a distribuiÁ„o ou reproduÁ„o deste script sem a autorizaÁ„o do autor
+// √â proib√≠da a distribui√ß√£o ou reprodu√ß√£o deste script sem a autoriza√ß√£o do autor
 
 if($calcular!="S")
 {
@@ -20,7 +20,7 @@ if($calcular!="S")
 
       <p align="center"><font face="Arial" size="2">Preencha os dados abaixo e
       clique em &quot;Calcular IMC&quot;, e logo<br>
-      apÛs&nbsp;verifique o resultado na tabela.</font></p>
+      ap√≥s&nbsp;verifique o resultado na tabela.</font></p>
       <div align="center">
         <center>
         <table border="0" cellpadding="2" cellspacing="1" width="33%" bgcolor="#FFF3E8" height="148">
@@ -53,7 +53,7 @@ else
 
  if(strlen($peso)==0 || strlen($altura)==0 || $peso<1 || $peso>500 || $altura<=0 || $altura>3)
  {
-   echo "<p align=\"center\"><font face=\"Arial\" size=\"2\" color=\"#000080\"><b>Valores inv·lidos!</b></font></p>";
+   echo "<p align=\"center\"><font face=\"Arial\" size=\"2\" color=\"#000080\"><b>Valores inv√°lidos!</b></font></p>";
  }
 
  else
@@ -69,18 +69,18 @@ else
    $imc = $peso / ($altura * $altura);
    $imc = substr ($imc,0,4);
 
-   echo "<p align=\"center\"><font face=\"Arial\" size=\"2\" color=\"#000080\">Seu Ìndice de massa corpÛrea (IMC) È <b>$imc</b></font></p>";
+   echo "<p align=\"center\"><font face=\"Arial\" size=\"2\" color=\"#000080\">Seu √≠ndice de massa corp√≥rea (IMC) √© <b>$imc</b></font></p>";
 ?>
-      <p align="center"><font face="Arial" size="2">Verifique o seu Ìndice na
+      <p align="center"><font face="Arial" size="2">Verifique o seu √≠ndice na
       tabela</font></p>
       <div align="center">
         <center>
         <table border="0" cellpadding="2" width="85%" bgcolor="#F7F7F7">
           <tr>
             <td width="33%" bgcolor="#C0C0C0"><font face="Arial" size="2" color="#000080"><b>IMC</b></font></td>
-            <td width="33%" bgcolor="#C0C0C0"><font face="Arial" size="2" color="#000080"><b>ClassificaÁ„o</b></font></td>
+            <td width="33%" bgcolor="#C0C0C0"><font face="Arial" size="2" color="#000080"><b>Classifica√ß√£o</b></font></td>
             <td width="34%" bgcolor="#C0C0C0"><font face="Arial" size="2" color="#000080"><b>Risco
-              de doenÁa</b></font></td>
+              de doen√ßa</b></font></td>
           </tr>
           <tr>
             <td width="33%" <?php if ($imc<18.5) {echo "bgcolor=\"#FFFF99\"";} ?>><font face="Arial" size="2">Menos de 18,5</font></td>
@@ -106,14 +106,14 @@ else
           <tr>
             <td width="33%" <?php if ($imc>=40) {echo "bgcolor=\"#FFFF99\"";} ?>><font face="Arial" size="2">Igual ou maior de 40</font></td>
             <td width="33%" <?php if ($imc>=40) {echo "bgcolor=\"#FFFF99\"";} ?>><font face="Arial" size="2">Obesidade grave</font></td>
-            <td width="34%" <?php if ($imc>=40) {echo "bgcolor=\"#FFFF99\"";} ?>><font face="Arial" size="2">MuitÌssimo elevado</font></td>
+            <td width="34%" <?php if ($imc>=40) {echo "bgcolor=\"#FFFF99\"";} ?>><font face="Arial" size="2">Muit√≠ssimo elevado</font></td>
           </tr>
         </table>
         </center>
       </div>
       <p align="center">&nbsp;</p>
       <p align="center"><a style="font-family: Arial; font-size: 12 pt; font-weight: bold" href="<?php echo $PHP_SELF; ?>">Calcular
-      outro Ìndice</a></p>
+      outro √≠ndice</a></p>
 
 <?php
 }}
