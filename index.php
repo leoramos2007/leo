@@ -1,37 +1,57 @@
 <?php
-$peso = $_POST['peso'];
-$altura = $_POST['altura'];
-$erro = 0;
-?>
-<html>
-head>
-<title>Calcula IMC</title>
-</head>
 
+//Código em html para montar o form.
+
+echo "
+<html>
+<head>
+<title>IMC</title>
+</head>
 <body>
+   Cálculo do Índice de Massa Corporal.<p>
+  <form action=\"imc2.php\" method=\"post\" name=\"f1\">
+ Peso:<input name=\"peso\" type=\"text\" size=\"10\" maxlength=\"50\" /><p>
+ Altura:<input name=\"altura\" type=\"text\" size=\"10\" maxlength=\"50\" /><p>
+ <input name=\"enviar\" type=\"submit\" value=\"OK\" />
+ </form>
+
+</body>
+</html>";
+?>
+
+Crie o arquivo imc2.php com o código abaixo:
+
 <?php
 
-if(empty($peso))
-{echo " Possui campo em branco.<br>"; $erro=1;}
-if(empty($altura))
-{echo " Possui campo em branco.<br>"; $erro=1;}
-if($erro == 1)
-{echo "Favor digitar os dados corretamente.";
-echo"<center><br><a href=index.php><img src=voltar.jpg border=0></a></center>";
-exit();}
-if ($erro == 0)
-$altura = bcpow($altura, 2, 2);
-$massa = $peso / $altura;
-$massa = round($massa);
-if($massa < 20) {
-$mensagem = "Você está magro.";
-}elseif(($massa > 20) && ($massa < 25)) {
-$mensagem = "Você está no peso ideal.";
-}else{
-$mensagem = "Você está acima do peso.";
-}
-echo "Sua massa corporal é: <b>$massa</b> <br>";
-echo "Estado atual: <b>$mensagem</b>"
-?>
+// Obtém as variáveis vindas do formulário.
+
+$peso = $_POST['peso'];
+$altura = $_POST['altura'];
+
+$imc=$peso/($altura*$altura);
+
+echo "
+<html>
+<head>
+<title>IMC</title>
+</head>
+<body>
+$imc<p>";
+ 
+  if ($imc<18.5){ 
+ echo " Peso abaixo do Normal !"; 
+  } else if (($imc > 18.5) && ($imc < 24.49)){
+ echo " Peso Normal !";  
+  } else if (($imc > 24.5) && ($imc < 29.9)){
+ echo " Pré-Obesidade !";  
+  } else if (($imc > 30) && ($imc < 34.9)){
+ echo " Obesidade classe I !";  
+  } else if (($imc > 35) && ($imc < 39.9)){
+ echo " Obesidade classe II !";   
+ } else if ($imc > 40){
+ echo " Obesidade classe III !";   
+ }
+  echo "
 </body>
-</html>
+</html>";
+?>
