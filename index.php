@@ -20,7 +20,7 @@ usar somente ponto
 $altura = $_POST["altura"];
 $peso = $_POST["peso"];
   
-  if($altura>0 $$ $peso>0){
+  if($altura>0 && $peso>0){
 $imc = $peso / ($altura * $altura);
   } 
 ?>
