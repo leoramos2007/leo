@@ -10,8 +10,7 @@ Peso: <input name="peso" type="text" id="peso" size="12" maxlength="152">
 <br>
 <input name="Submit" type="submit" id="calcular" value="Calcular">
 <br>
-<br>
-usar somente ponto
+Usar somente ponto
 </form>
 <br>
 <br>
