@@ -10,9 +10,8 @@ Altura: <input type="text" size="20" name="altura">
 
 <?php
 
-$peso = $_POST['peso'];
-
-$altura = $_POST['altura'];
+$peso = $_GET['peso'];
+$altura = $_GET['altura'];
 
 $altura = bcpow($altura, 2, 2);
 
